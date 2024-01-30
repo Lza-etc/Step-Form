@@ -1,0 +1,38 @@
+<div class="wizard">
+  <hr class="line">
+  <div class="time-line">
+    <app-step-icon>
+      <i class="glyphicon glyphicon-folder-open"></i>
+    </app-step-icon>
+    <app-step-icon>
+      <i class="glyphicon glyphicon-pencil"></i>
+    </app-step-icon>
+    <app-step-icon>
+      <i class="glyphicon glyphicon-picture"></i>
+    </app-step-icon>
+    <app-step-icon>
+      <i class="glyphicon glyphicon-ok"></i>
+    </app-step-icon>
+  </div>
+  <div class="triangle" class=""></div>
+  <hr class="line2">
+  <div class="container">
+    <div class="template" *ngIf="currentStep.stepIndex==4">
+      <app-template>
+        <ng-container heading> Complete</ng-container>
+        <ng-container content> You have successfully completed all steps. </ng-container>
+      </app-template>
+    </div>
+    <div class="template" *ngIf="currentStep.stepIndex!=4">
+      <app-template>
+        <ng-container heading> Step {{currentStep.stepIndex}}</ng-container>
+        <ng-container content> This is step {{currentStep.stepIndex}}. </ng-container>
+      </app-template>
+    </div>
+    <div class="nav-buttons">
+      <app-button (click)="previous()" [hidden]="currentStep.stepIndex==1 || currentStep.stepIndex==4"><p >Previous</p></app-button>
+      <app-button (click)="saveAndContinue()" [hidden]="currentStep.stepIndex==4"><p >Save and Continue</p></app-button>
+    </div>
+
+  </div>
+</div>

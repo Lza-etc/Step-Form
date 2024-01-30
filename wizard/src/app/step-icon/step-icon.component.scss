@@ -1,0 +1,10 @@
+.icon{
+    border: solid 2px rgb(230, 118, 136);
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    border-radius: 200px;
+}
+.icon.clicked{
+    border: solid 6px rgb(230, 118, 136);
+}

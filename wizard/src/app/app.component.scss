@@ -1,0 +1,39 @@
+.wizard{
+    width: 95%;
+}
+.time-line{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 60%;
+    margin: auto;
+    position: fixed;
+    top:150px;
+    left: 19%;
+}
+.glyphicon {
+    font-size: 28px;
+    margin:20px;
+    color: rgb(43, 43, 50);
+}
+.line{
+    background-color: rgb(230, 118, 136);
+    height: 1px;
+    width: 45%;
+    margin: auto;
+    margin-top: 200px;
+    opacity: 1;
+}
+.line2{
+    background-color: rgb(230, 118, 136);
+    height: 1px;
+    width: 75%;
+    margin: auto;
+    margin-top: 120px;
+    opacity: 1;
+}
+.nav-buttons{
+    display: flex;
+    float: right;
+    margin-top: 50px;
+}
