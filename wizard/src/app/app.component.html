@@ -1,20 +1,8 @@
 <div class="wizard">
   <hr class="line">
-  <div class="time-line">
-    <app-step-icon>
-      <i class="glyphicon glyphicon-folder-open"></i>
-    </app-step-icon>
-    <app-step-icon>
-      <i class="glyphicon glyphicon-pencil"></i>
-    </app-step-icon>
-    <app-step-icon>
-      <i class="glyphicon glyphicon-picture"></i>
-    </app-step-icon>
-    <app-step-icon>
-      <i class="glyphicon glyphicon-ok"></i>
-    </app-step-icon>
+  <app-steps></app-steps>
+  <div class="triangle-{{currentStep.stepIndex}}"><i class="glyphicon glyphicon-triangle-bottom"></i>
   </div>
-  <div class="triangle" class=""></div>
   <hr class="line2">
   <div class="container">
     <div class="template" *ngIf="currentStep.stepIndex==4">
@@ -31,6 +19,7 @@
     </div>
     <div class="nav-buttons">
       <app-button (click)="previous()" [hidden]="currentStep.stepIndex==1 || currentStep.stepIndex==4"><p >Previous</p></app-button>
+      <app-button (click)="saveAndContinue()" [hidden]="currentStep.stepIndex!=3"><p >Skip</p></app-button>
       <app-button (click)="saveAndContinue()" [hidden]="currentStep.stepIndex==4"><p >Save and Continue</p></app-button>
     </div>
 

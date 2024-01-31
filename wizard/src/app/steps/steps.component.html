@@ -1,0 +1,22 @@
+<div class="hover-text">
+
+</div>
+<div class="time-line">
+    <div class="icon" (click)="onStepClick(0)">
+        <i class="glyphicon glyphicon-folder-open icon__item"></i>
+        <div class="hover-text1">Step 1</div>
+    </div>
+    <div class="icon" [class.disabled]="!steps[0].isComplete" (click)="onStepClick(1)">
+        <i class="glyphicon glyphicon-pencil icon__item"></i>
+        <div class="hover-text2" >Step 2</div>
+    </div>    
+    <div class="icon" (click)="onStepClick(2)" [class.disabled]="!steps[1].isComplete">
+        <i class="glyphicon glyphicon-picture icon__item" ></i>
+        <div class="hover-text3" >Step 3</div>
+    </div>
+    <div class="icon" (click)="onStepClick(3)" [class.disabled]="!steps[2].isComplete">
+        <i class="glyphicon glyphicon-ok icon__item" ></i>
+        <div class="hover-text4">Complete</div>
+    </div>
+  </div>
+  
