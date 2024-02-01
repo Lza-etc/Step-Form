@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-template',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrl: './template.component.scss'
 })
 export class TemplateComponent {
+  @Input() active: boolean = false;
 
 }

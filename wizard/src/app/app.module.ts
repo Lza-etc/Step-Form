@@ -6,6 +6,7 @@ import { ButtonComponent } from './button/button.component';
 import { StepsService } from './steps.service';
 import { TemplateComponent } from './template/template.component';
 import { StepsComponent } from './steps/steps.component';
+import { StepFormComponent } from './step-form/step-form.component';
 
 
 
@@ -14,7 +15,8 @@ import { StepsComponent } from './steps/steps.component';
     AppComponent,
     ButtonComponent,
     TemplateComponent,
-    StepsComponent
+    StepsComponent,
+    StepFormComponent
   ],
   imports: [
     BrowserModule,

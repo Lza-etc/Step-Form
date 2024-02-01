@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, OnDestroy, OnInit, Output } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 import { StepsService } from '../steps.service';
 import { StepModel } from '../step.model';
@@ -12,6 +12,8 @@ export class StepsComponent implements OnInit, AfterViewInit, OnDestroy {
   currentStep!: StepModel;
   steps!: StepModel[];
   private unsubscribe = new Subject<void>();
+  @Output()prevPage = new EventEmitter<number>();
+  @Output() currenPage = new EventEmitter<number>();
 
   constructor(private stepsService: StepsService) { }
 
@@ -40,8 +42,10 @@ export class StepsComponent implements OnInit, AfterViewInit, OnDestroy {
 
   public onStepClick(step: number): void {
     if(step==0||(step && this.steps[step-1].isComplete==true)){
+      this.prevPage.emit(this.currentStep.stepIndex-1);
       this.currentStep=this.steps[step];
       this.stepsService.setCurrentStep(this.currentStep);
+      this.currenPage.emit(this.currentStep.stepIndex-1);
     }
   }
 }
