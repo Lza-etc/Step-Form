@@ -1,9 +1,9 @@
 <div class="template">
-    <h3 class="heading">
-        <ng-content select="[heading]" *ngIf="active"></ng-content>
-    </h3>
-    <hr *ngIf="active">
-    <p class="content">
-        <ng-content select="[content]" *ngIf="active"></ng-content>
-    </p>
+  <h3 class="heading">
+    <ng-content select="[heading]" *ngIf="active"></ng-content>
+  </h3>
+  <hr *ngIf="active" />
+  <p class="content">
+    <ng-content select="[content]" *ngIf="active"></ng-content>
+  </p>
 </div>

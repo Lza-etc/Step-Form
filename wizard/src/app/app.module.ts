@@ -8,25 +8,16 @@ import { TemplateComponent } from './template/template.component';
 import { StepsComponent } from './steps/steps.component';
 import { StepFormComponent } from './step-form/step-form.component';
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
     ButtonComponent,
     TemplateComponent,
     StepsComponent,
-    StepFormComponent
+    StepFormComponent,
   ],
-  imports: [
-    BrowserModule,
-    CommonModule
-  ],
-  providers:[
-    StepsService
-  ],
-  bootstrap:[
-    AppComponent
-  ]
+  imports: [BrowserModule, CommonModule],
+  providers: [StepsService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

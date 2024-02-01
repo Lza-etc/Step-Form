@@ -8,10 +8,9 @@ describe('StepFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StepFormComponent]
-    })
-    .compileComponents();
-    
+      imports: [StepFormComponent],
+    }).compileComponents();
+
     fixture = TestBed.createComponent(StepFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

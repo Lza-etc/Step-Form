@@ -1,5 +1,4 @@
 export interface StepModel {
-    stepIndex: number;
-    isComplete: boolean;
+  stepIndex: number;
+  isComplete: boolean;
 }
-

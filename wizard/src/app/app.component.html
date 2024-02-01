@@ -1,35 +1,53 @@
 <div class="wizard">
-  <hr class="line">
-  <app-steps (currenPage)="onValueEmittedCurr($event)" (prevPage)="onValueEmittedPrev($event)"></app-steps>
-  <div class="triangle-{{currentStep.stepIndex}}"><i class="glyphicon glyphicon-triangle-bottom"></i>
+  <hr class="line" />
+  <app-steps
+    (currenPage)="onValueEmittedCurr($event)"
+    (prevPage)="onValueEmittedPrev($event)"
+  ></app-steps>
+  <div class="triangle-{{ currentStep.stepIndex }}">
+    <i class="glyphicon glyphicon-triangle-bottom"></i>
   </div>
-  <hr class="line2">
+  <hr class="line2" />
   <div class="container">
     <div class="template">
-      <app-step-form [prevPage]="prevPage" [currenPage]="currenPage">     
+      <app-step-form [prevPage]="prevPage" [currenPage]="currenPage">
         <app-template [active]="true">
-        <ng-container heading> Step 1</ng-container>
-        <ng-container content> This is step 1. </ng-container>
+          <ng-container heading> Step 1</ng-container>
+          <ng-container content> This is step 1. </ng-container>
         </app-template>
         <app-template>
-        <ng-container heading> Step 2</ng-container>
-        <ng-container content> This is step 2. </ng-container>
+          <ng-container heading> Step 2</ng-container>
+          <ng-container content> This is step 2. </ng-container>
         </app-template>
         <app-template>
-        <ng-container heading> Step 3</ng-container>
-        <ng-container content> This is step 3. </ng-container>
+          <ng-container heading> Step 3</ng-container>
+          <ng-container content> This is step 3. </ng-container>
         </app-template>
         <app-template>
-        <ng-container heading> Complete</ng-container>
-        <ng-container content> You have successfully completed all steps. </ng-container>
-        </app-template>  
+          <ng-container heading> Complete</ng-container>
+          <ng-container content>
+            You have successfully completed all steps.
+          </ng-container>
+        </app-template>
       </app-step-form>
     </div>
+    <div>Pre</div>
     <div class="nav-buttons">
-      <app-button (click)="previous()" [hidden]="currentStep.stepIndex==1 || currentStep.stepIndex==4"><p >Previous</p></app-button>
-      <app-button (click)="saveAndContinue()" [hidden]="currentStep.stepIndex!=3"><p >Skip</p></app-button>
-      <app-button (click)="saveAndContinue()" [hidden]="currentStep.stepIndex==4"><p >Save and Continue</p></app-button>
+      <app-button
+        (click)="previous()"
+        [hidden]="currentStep.stepIndex == 1 || currentStep.stepIndex == 4"
+        ><p>Previous</p></app-button
+      >
+      <app-button
+        (click)="saveAndContinue()"
+        [hidden]="currentStep.stepIndex != 3"
+        ><p>Skip</p></app-button
+      >
+      <app-button
+        (click)="saveAndContinue()"
+        [hidden]="currentStep.stepIndex == 4"
+        ><p>Save and Continue</p></app-button
+      >
     </div>
-
   </div>
 </div>

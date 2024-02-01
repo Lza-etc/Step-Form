@@ -13,7 +13,7 @@
 // })
 // export class StepsService implements OnInit {
 
-//   ngOnInit(): void { 
+//   ngOnInit(): void {
 //     this.dataSubject.next(STEPS);
 //     this.currentStep.next(STEPS[0]);
 //   }
@@ -68,16 +68,18 @@ const STEPS = [
   { stepIndex: 1, isComplete: false },
   { stepIndex: 2, isComplete: false },
   { stepIndex: 3, isComplete: false },
-  { stepIndex: 4, isComplete: false }
+  { stepIndex: 4, isComplete: false },
 ];
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class StepsService {
-
-  private stepsSubject: BehaviorSubject<StepModel[]> = new BehaviorSubject<StepModel[]>(STEPS);
-  private currentStep: BehaviorSubject<StepModel> = new BehaviorSubject<StepModel>(STEPS[0]);
+  private stepsSubject: BehaviorSubject<StepModel[]> = new BehaviorSubject<
+    StepModel[]
+  >(STEPS);
+  private currentStep: BehaviorSubject<StepModel> =
+    new BehaviorSubject<StepModel>(STEPS[0]);
 
   setData(data: StepModel[]): void {
     this.stepsSubject.next(data);
