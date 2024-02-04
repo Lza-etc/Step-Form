@@ -20,7 +20,7 @@ export class StepFormComponent implements OnChanges {
   @Input() prevPage: number = 0;
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes['currenPage'] && this.stepss.length > 0) {
+    if (changes['currenPage'] && this.stepss && this.stepss.length > 0) {
       console.log(this.prevPage, this.currenPage);
       this.stepss.toArray()[this.prevPage].active = false;
       this.stepss.toArray()[this.currenPage].active = true;

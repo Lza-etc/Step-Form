@@ -9,7 +9,6 @@ import {
 import { Subject, takeUntil } from 'rxjs';
 import { StepModel } from './step.model';
 import { StepsService } from './steps.service';
-import { TemplateComponent } from './template/template.component';
 
 @Component({
   selector: 'app-root',
@@ -60,6 +59,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.currentStep.stepIndex == this.steps.length - 1)
       this.steps[this.currentStep.stepIndex].isComplete = true;
     this.stepsService.setData(this.steps);
+
     this.currentStep = this.steps[this.currentStep.stepIndex];
     this.stepsService.setCurrentStep(this.currentStep);
     this.prevPage = this.currenPage;
@@ -67,11 +67,11 @@ export class AppComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   public previous(): void {
-    if (this.currentStep.stepIndex > 1) {
-      this.currentStep = this.steps[this.currentStep.stepIndex - 2];
-      this.stepsService.setCurrentStep(this.currentStep);
+    if (this.currenPage > 0) {
       this.prevPage = this.currenPage;
-      this.currenPage = this.currentStep.stepIndex - 1;
+      this.currenPage--;
+      this.currentStep = this.steps[this.currenPage];
+      this.stepsService.setCurrentStep(this.currentStep);
     }
   }
   onValueEmittedCurr(value: number) {

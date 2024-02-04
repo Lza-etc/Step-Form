@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { StepFormComponent } from './step-form.component';
+import { CommonModule } from '@angular/common';
 
 describe('StepFormComponent', () => {
   let component: StepFormComponent;
@@ -8,7 +9,8 @@ describe('StepFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [StepFormComponent],
+      declarations: [StepFormComponent],
+      imports: [CommonModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(StepFormComponent);
@@ -16,7 +18,7 @@ describe('StepFormComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create a step form', () => {
     expect(component).toBeTruthy();
   });
 });

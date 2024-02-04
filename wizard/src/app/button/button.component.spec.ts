@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ButtonComponent } from './button.component';
+import { CommonModule } from '@angular/common';
 
 describe('ButtonComponent', () => {
   let component: ButtonComponent;
@@ -8,7 +9,8 @@ describe('ButtonComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ButtonComponent],
+      declarations: [ButtonComponent],
+      imports: [CommonModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ButtonComponent);
@@ -16,7 +18,7 @@ describe('ButtonComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create a button', () => {
     expect(component).toBeTruthy();
   });
 });
